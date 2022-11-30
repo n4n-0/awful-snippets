@@ -3,11 +3,23 @@
   "displayName": "Awful Snippets",
   "description": "Snippets for the Awful Framework",
   "version": "0.0.1",
+  "publisher": "DanFrmSpace",
+  "author": {
+    "name": "DanFrmSpace"
+  },
   "engines": {
     "vscode": "^1.73.0"
   },
   "categories": [
     "Snippets"
+  ],
+  "keywords": [
+    "Awful Framework",
+    "Awful",
+    "Framework",
+    "DanFrmSpace",
+    "Snippets",
+    "inteliSense"
   ],
   "contributes": {
     "snippets": [
