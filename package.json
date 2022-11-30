@@ -1,0 +1,20 @@
+{
+  "name": "awful-snippets",
+  "displayName": "Awful Snippets",
+  "description": "Snippets for the Awful Framework",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "lua",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}

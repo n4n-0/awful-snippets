@@ -1,0 +1,75 @@
+{
+  "awful": {
+    "prefix": "awful",
+    "body": ["local Unlocker,  awful, ${1:project} = ..."],
+    "description": "Define Awful"
+  },
+
+  "awful.time": {
+    "prefix": "awful.time",
+    "body": ["awful.time"],
+    "description": "current time in seconds, equal to GetTime(), but only updated when awful framework ticks."
+  },
+
+  "awful.buffer": {
+    "prefix": "awful.buffer",
+    "body": ["awful.buffer"],
+    "description": "a combination of dynamic values which is roughly equal to the time it should take for what's displayed on your client to reach the servers, plus 1 tick of buffer for your script to react before it's too late, and 30ms to account for any latency jitter: \nbuffer = latency + tickRate + jitter"
+  },
+
+  "awful.latency": {
+    "prefix": "awful.latency",
+    "body": ["awful.latency"],
+    "description": "Your latency to the game server, averaged out over the last 30 seconds, with HTTP overhead accounted for."
+  },
+
+  "awful.tickRate": {
+    "prefix": "awful.tickRate",
+    "body": ["awful.tickRate"],
+    "description": "the time between each tick of the awful framework"
+  },
+
+  "awful.spellCastBuffer": {
+    "prefix": "awful.spellCastBuffer",
+    "body": ["awful.spellCastBuffer"],
+    "description": "The Spell Queue Window duration set by awful"
+  },
+
+  "awful.gcd": {
+    "prefix": "awful.gcd",
+    "body": ["awful.gcd"],
+    "description": "The total expected GCD duration per general 1.5s GCD incurring spell cast"
+  },
+
+  "awful.hasControl": {
+    "prefix": "awful.hasControl",
+    "body": ["awful.hasControl"],
+    "description": "Returns true if the player has control of their character"
+  },
+
+  "awful.zone": {
+    "prefix": "awful.zone",
+    "body": ["awful.zone"],
+    "description": "Returns the current zone name"
+  },
+
+  "awful.mapID": {
+    "prefix": "awful.mapID",
+    "body": ["awful.mapID"],
+    "description": "Returns the current map ID"
+  },
+
+  "awful.powerTypes": {
+    "prefix": "awful.powerTypes",
+    "body": ["awful.powerTypes"],
+    "description": "Returns a table of power types"
+  },
+
+  "SELECT/awful.powerTypes": {
+    "prefix": "awful.powerTypes",
+    "body": [
+      "awful.powerTypes[\"${1|mana, rage, focus, energy, combopoints, cp, runes, runicpower, soulshards, shards, astralpower, ap, lunarpower, holypower, alternatepower, maelstrom, chi, insantiy, arcanecharges, fury, pain, essence|}\"]"
+    ],
+    "description": "Selects a Power Type from the Power Types table"
+  }
+}
