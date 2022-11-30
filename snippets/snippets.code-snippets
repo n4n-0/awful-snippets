@@ -24,7 +24,7 @@
   },
 
   "awful.tickRate": {
-    "prefix": "awful.tickRate",
+    "prefix": ["awful.tickRate", "tickRate"],
     "body": ["awful.tickRate"],
     "description": "the time between each tick of the awful framework"
   },
@@ -36,40 +36,92 @@
   },
 
   "awful.gcd": {
-    "prefix": "awful.gcd",
+    "prefix": ["awful.gcd", "gcd"],
     "body": ["awful.gcd"],
     "description": "The total expected GCD duration per general 1.5s GCD incurring spell cast"
   },
 
   "awful.hasControl": {
-    "prefix": "awful.hasControl",
+    "prefix": ["awful.hasControl", "hasControl"],
     "body": ["awful.hasControl"],
     "description": "Returns true if the player has control of their character"
   },
 
   "awful.zone": {
-    "prefix": "awful.zone",
+    "prefix": ["awful.zone", "zone"],
     "body": ["awful.zone"],
     "description": "Returns the current zone name"
   },
 
   "awful.mapID": {
-    "prefix": "awful.mapID",
+    "prefix": ["awful.mapID", "mapID"],
     "body": ["awful.mapID"],
     "description": "Returns the current map ID"
   },
 
   "awful.powerTypes": {
-    "prefix": "awful.powerTypes",
+    "prefix": ["awful.powerTypes", "powerTypes"],
     "body": ["awful.powerTypes"],
     "description": "Returns a table of power types"
   },
 
   "SELECT/awful.powerTypes": {
-    "prefix": "awful.powerTypes",
+    "prefix": ["awful.powerTypes", "powerTypes"],
     "body": [
-      "awful.powerTypes[\"${1|mana, rage, focus, energy, combopoints, cp, runes, runicpower, soulshards, shards, astralpower, ap, lunarpower, holypower, alternatepower, maelstrom, chi, insantiy, arcanecharges, fury, pain, essence|}\"]"
+      "awful.powerTypes[\"${1|mana,rage,focus,energy,combopoints,cp,runes,runicpower,soulshards,shards,astralpower,ap, lunarpower,holypower,alternatepower,maelstrom,chi,insantiy,arcanecharges,fury,pain,essence|}\"]"
     ],
     "description": "Selects a Power Type from the Power Types table"
+  },
+
+  "awful.onTick": {
+    "prefix": ["awful.onTick", "onTick"],
+    "body": ["awful.onTick(function()", "  ${1:-- do something}", "end)"],
+    "description": "Adds a callback function to the main framework ticker. These are called in the order added, just before the routine actor."
+  },
+
+  "awful.onUpdate": {
+    "prefix": ["awful.onUpdate", "onUpdate"],
+    "body": ["awful.onUpdate(function()", " ${1:-- do something}", "end)"],
+    "description": "Adds a callback function to the main framework ticker. These are called in the order added, just before the routine actor."
+  },
+
+  "awful.onEvent": {
+    "prefix": ["awful.onEvent", "onEvent"],
+    "body": [
+      "awful.onEvent(function()",
+      " ${2:-- do something}",
+      "end, \"${1:EVENT}\")"
+    ],
+    "description": "Adds a callback function to the main framework ticker. These are called in the order added, just before the routine actor."
+  },
+
+  "awful.bin": {
+    "prefix": ["awful.bin", "bin"],
+    "body": ["awful.bin"],
+    "description": "Converts value of given expression / variable into binary."
+  },
+
+  "awful.controlMovement": {
+    "prefix": "awful.controlMovement",
+    "body": ["awful.controlMovement(${1:duration}, ${2:facing})"],
+    "description": "Controls the movement of the player. 0 = stop, 1 = forward, 2 = backward, 3 = strafe left, 4 = strafe right, 5 = forward + strafe left, 6 = forward + strafe right, 7 = backward + strafe left, 8 = backward + strafe right"
+  },
+
+  "awful.StopMoving": {
+    "prefix": ["awful.StopMoving", "StopMoving"],
+    "body": ["awful.StopMoving()"],
+    "description": "Immediately stops the player from moving, as long as they're not in the air."
+  },
+
+  "awful.Populate": {
+    "prefix": ["awful.Populate", "populate"],
+    "body": ["awful.Populate(\"${1:array}\", ${2:namespace})"],
+    "description": "Creates a reference to each entry within given associative array (Param 1) inside of all other given tables, namespaces, scopes, etc. as well (Params 2 - N)"
+  },
+
+  "awful.pullTimer": {
+    "prefix": ["awful.pullTimer", "pullTimer"],
+    "body": ["${1|awful.pullTimer : 0,awful.pullBradsWilly|}"],
+    "description": "Creates a reference to a pull timer that has been used by things like DBM or BigWigs. Defaults to 0 if no pull timer."
   }
 }
