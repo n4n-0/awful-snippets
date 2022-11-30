@@ -123,5 +123,118 @@
     "prefix": ["awful.pullTimer", "pullTimer"],
     "body": ["${1|awful.pullTimer : 0,awful.pullBradsWilly|}"],
     "description": "Creates a reference to a pull timer that has been used by things like DBM or BigWigs. Defaults to 0 if no pull timer."
+  },
+
+  // Alerts and Visuals
+  "awful.alert": {
+    "prefix": ["awful.alert", "alert"],
+    "body": [
+      "awful.alert({",
+      "  message = \"${1:Message}\",",
+      "  texture = ${2:texture},",
+      "  duration = ${3:5},",
+      "  bgColor = {${4:255, 255, 255, 255}},",
+      "})"
+    ],
+    "description": "Creates an alert on the screen"
+  },
+
+  "ERROR/awful.alert": {
+    "prefix": "errorAlert",
+    "body": [
+      "awful.alert({message = \"${1:Message}\", texture = 134337, duration = 5, bgColor = {153, 29, 31, 255}})"
+    ],
+    "description": "Creates an error alert on the screen"
+  },
+
+  "awful.textureEscape": {
+    "prefix": ["awful.textureEscape", "textureEscape"],
+    "body": ["awful.textureEscape(${1:texture}, ${2:px}, \"${3:x:y}\")"]
+  },
+
+  "awful.Draw": {
+    "prefix": ["awful.Draw"],
+    "body": [
+      "local Draw = awful.draw",
+      "Draw(function(draw)",
+      "  ${1:-- do something}",
+      "end)"
+    ],
+    "description": "Draws various things in game. See the documentation for more information."
+  },
+
+  "ELEMENT/SetDrawWidth": {
+    "prefix": ["draw:SetWidth", "SetWidth"],
+    "body": ["draw:SetWidth(${1:width})"],
+    "description": "Sets the width of the element"
+  },
+
+  "ELEMENT/SetDrawColor": {
+    "prefix": ["draw:SetColor", "SetColor"],
+    "body": ["draw:SetColor(${1:0}, ${2:0}, ${3:0}, ${4:255})"],
+    "description": "Sets the color of the element"
+  },
+
+  "ELEMENT/DrawLine": {
+    "prefix": ["draw:Line", "Line"],
+    // (x1, y1, z1, x2, y2, z2, maxDistance)
+    "body": "draw:Line(${1:x}, ${2:y}, ${3:z}, ${4:x2}, ${5:y2}, ${6:z2}, ${7:maxDistance})",
+    "description": "Draws a line between two points"
+  },
+
+  "ELEMENT/DrawCircle": {
+    "prefix": ["draw:Circle", "Circle"],
+    // (x, y, z, radius, steps)
+    "body": "draw:Circle(${1:x}, ${2:y}, ${3:z}, ${4:radius}, ${5:steps})",
+    "description": "Draws a circle around the coordinate given"
+  },
+
+  "ELEMENT/DrawArc": {
+    "prefix": ["draw:Arc", "Arc"],
+    // (x, y, z, size, arc, rotation)
+    "body": "draw:Arc(${1:x}, ${2:y}, ${3:z}, ${4:size}, ${5:arc}, ${6:rotation})",
+    "description": "Draws an arc around the coordinate given"
+  },
+
+  "ELEMENT/DrawRect": {
+    "prefix": ["draw:Rect", "Rect"],
+    // (x, y, z, width, length, rotation)
+    "body": "draw:Rect(${1:x}, ${2:y}, ${3:z}, ${4:width}, ${5:length}, ${6:rotation})",
+    "description": "Draws a rectangle around the coordinate given"
+  },
+
+  "ELEMENT/Outline": {
+    "prefix": ["draw:Outline", "Outline"],
+    // (x, y, z, radius)
+    "body": "draw:Outline(${1:x}, ${2:y}, ${3:z}, ${4:radius})",
+    "description": "Draws a circle witha thick border around the coordinate given"
+  },
+
+  "ELEMENT/FilledCircle": {
+    "prefix": ["draw:FilledCircle", "FilledCircle"],
+    // (x, y, z, radius, steps)
+    "body": "draw:FilledCircle(${1:x}, ${2:y}, ${3:z}, ${4:radius}, ${5:steps})",
+    "description": "Draws a filled circle around the coordinate given"
+  },
+
+  "ELEMENT/Triangle": {
+    "prefix": ["draw:Triangle", "Triangle"],
+    // (x, y, z, v1, v2, v3, cull, wireframe)
+    "body": "draw:Triangle(${1:x}, ${2:y}, ${3:z}, ${4:v1}, ${5:v2}, ${6:v3}, ${7:cull}, ${8:wireframe})",
+    "description": "Draws a triangle on the coordinate given"
+  },
+
+  "ELEMENT/Text": {
+    "prefix": ["draw:Text", "Text"],
+    // (string, font, x, y, z)
+    "body": "draw:Text(\"${1:string}\", ${2:font}, ${3:x}, ${4:y}, ${5:z})",
+    "description": "Draws text on the coordinate given"
+  },
+
+  "ELEMENT/Texture": {
+    "prefix": ["draw:Texture", "Texture"],
+    // (config, x, y, z, alpha)
+    "body": "draw:Texture({ ${1:Texture}, ${2:width}, ${3:height} }, ${4:x}, ${5:y}, ${6:z}, ${7:alpha})",
+    "description": "Draws a texture on the coordinate given"
   }
 }
