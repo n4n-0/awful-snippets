@@ -300,7 +300,16 @@
     ],
     "description": "Creates a text element"
   },
-
+  "GUI_ELEMENT/header": {
+		"prefix": [
+			"guiheader",
+			"header",
+		],
+		"body": [
+			"${1:var}:Text({ text = awful.textureEscape(${2:id}, ${3:14}) ..  '${4:text}', header = true})",
+		],
+		"description": "Creates a Header"
+	},
   "GUI_ELEMENT/Slider": {
     "prefix": "slider",
     "body": [
@@ -347,5 +356,22 @@
       "  header = \"${8:Header}\",",
       "})"
     ]
-  }
+  },
+  "GUI_ELEMENT/StatusFrame-Element": {
+		"prefix": [
+      "statusframe",
+			"status",
+		],
+		"body": [
+			"local ${1:var} = statusFrame:Toggle({",
+			"label = '${2:label}:',",
+			"var = '${1:var}',",
+			"onClick = function()",
+			"${4:settings.${1:var} = not settings.${1:var}}",
+			"end",
+			"})",
+		],
+		"description": "Create a Status Widget"
+	},
+
 }
